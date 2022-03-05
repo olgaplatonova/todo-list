@@ -1,0 +1,47 @@
+.border {
+  padding: 0;
+  list-style: none;
+  width: 470px;
+}
+
+li {
+  display: flex;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-bottom: 2px solid grey;
+}
+
+label {
+  display: block;
+  cursor: pointer;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked + .fakeCheckbox {
+  background: linear-gradient(#f7f5f5 0%, #f7f5f5 86%, #f7f5f5 100%);;
+}
+
+.checkbox:checked + .fakeCheckbox::before {
+  content: "✓";
+  font-size: 35px;
+  color: rgb(109, 86, 251);
+  /* Выровняем галочку */
+  display: block;
+  margin-top: -10px;
+}
+
+.fakeCheckbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  /* Выровняем по тексту */
+  vertical-align: middle;
+  margin-top: -2px;
+  margin-right: 10px;
+}
+
+
