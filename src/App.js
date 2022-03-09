@@ -23,8 +23,9 @@ function App(compareFn) {
         }
     }
 
-    const removeTask = (taskName) => {
-
+    const onRemoveTask = (id) => {
+        setTodos([...todos.filter(it => it.id !==id)])
+        console.log(id)
     }
 
     const handleToggle = () => {
@@ -39,7 +40,7 @@ function App(compareFn) {
                 <h1>Список дел: {todos.length}</h1>
             </header>
             <TodoForm saveToDo={addTask}/>
-            <TodoList listTodo={todos} checkboxToggle={checkboxToggle}/>
+            <TodoList listTodo={todos} checkboxToggle={checkboxToggle} onRemoveTask={onRemoveTask}/>
         </div>
     );
 }
