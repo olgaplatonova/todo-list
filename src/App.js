@@ -2,7 +2,6 @@ import './App.module.scss';
 import TodoForm from './components/TodoForm/TodoForm';
 import TodoList from './components/TodoList/TodoList';
 import React, {useEffect, useState} from 'react';
-import todo from './components/Todo/Todo';
 import styles from './App.module.scss';
 
 function App(compareFn) {
@@ -28,11 +27,7 @@ function App(compareFn) {
         console.log(id)
     }
 
-    const handleToggle = () => {
-
-    }
-
-    useEffect(() => console.log(todos), [todos]);
+    // useEffect(() => console.log(todos), [todos]);
 
     return (
         <div className={styles.App}>

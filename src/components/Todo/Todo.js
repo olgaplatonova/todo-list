@@ -1,10 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Todo.module.scss';
 import { FaTrash } from 'react-icons/fa'
 
-
-const Todo = ({taskName, done, deleted, id, checkboxToggle, onRemoveTask}) => {
+const Todo = ({taskName, done, id, checkboxToggle, onRemoveTask}) => {
 
     //Обработчик изменения чекбокса
     const emitCheckbox = e => {
@@ -20,7 +18,7 @@ const Todo = ({taskName, done, deleted, id, checkboxToggle, onRemoveTask}) => {
         <ul className={styles.border}>
             <li>
                 <label>
-                    <input className={styles.checkbox} type={'checkbox'} onChange={emitCheckbox}  />
+                    <input className={styles.checkbox} type={'checkbox'} onChange={emitCheckbox} checked={done} />
                     <span className={styles.fakeCheckbox}/>
                         {taskName}
                 </label>

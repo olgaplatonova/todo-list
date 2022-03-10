@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import PropTypes from 'prop-types';
 import styles from './TodoForm.module.scss'
 
 let id = 0;
@@ -11,7 +10,7 @@ const TodoForm = ({ saveToDo }) => {
     const submit = event => {
         event.preventDefault();
         if (taskName) {
-            saveToDo({taskName, done: false, deleted: false, id: ++id});
+            saveToDo({taskName, done: false, id: ++id});
             setTaskName('');
         }
     }
