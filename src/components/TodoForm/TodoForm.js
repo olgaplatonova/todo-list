@@ -9,9 +9,11 @@ const TodoForm = ({ saveToDo }) => {
     const[taskName, setTaskName] = useState('');
 
     const submit = event => {
-      event.preventDefault();
-      saveToDo({taskName, done: false, deleted: false, id: ++id});
-      setTaskName('');
+        event.preventDefault();
+        if (taskName) {
+            saveToDo({taskName, done: false, deleted: false, id: ++id});
+            setTaskName('');
+        }
     }
 
     return (
